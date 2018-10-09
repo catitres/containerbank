@@ -48,17 +48,22 @@ cd containerbank
 
 Le stockage et l'accès aux données de l'application a été préconfigurée avec deux profiles : 
 - **HSQL (par defaut)** : l'application tournera toute seule, sans aucune configuration de votre part
-- **MySQL** : par défaut, les identifiants pour accéder à la base de données sont definis dans le fichier `pom.xml` :
-  **Vous devez obligatoirement suivre ce guide afin de faire tourner l'application en profil MYSQL**
-   https://askubuntu.com/questions/766334/cant-login-as-mysql-user-root-from-normal-user-account-in-ubuntu-16-04/801950
-
+- **MySQL** : par défaut, les identifiants pour accéder à la base de données sont definis dans le fichier `pom.xml` :<br/>
+  ```
+  sudo mysql -u root -p
+  mysql> SELECT User,Host FROM mysql.user;
+  mysql> DROP USER 'root'@'localhost';
+  mysql> CREATE USER 'root'@'%' IDENTIFIED BY '';
+  mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+  mysql> FLUSH PRIVILEGES;
+  ```
   ```
   <properties>
       <jpa.database>MYSQL</jpa.database>
       <jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>
       <jdbc.url>jdbc:mysql://localhost:3306/containerbank?useUnicode=true</jdbc.url>
       <jdbc.username>root</jdbc.username>
-      <jdbc.password>root</jdbc.password>
+      <jdbc.password></jdbc.password>
   </properties>
   ```      
   
