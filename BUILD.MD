@@ -1,6 +1,10 @@
 
 # Instructions pour builder / run l'app
 
+## Build de l'app
+    mvn clean package
+    
+
 ## Base de données
 ...
 
