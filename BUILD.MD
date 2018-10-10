@@ -35,7 +35,7 @@ sudo docker run -d --name=mysql_bank1 -p 33009:3306 -e MYSQL_ROOT_PASSWORD=mypas
 
 - init du user root ( 1 seule fois) 
 
-sudo mysql -uroot -h 192.168.1.238 -P 33009 --protocol=tcp -p  /home/hackathon/storage/config-files/rct-mysql/init_user.sql
+sudo mysql -uroot -h 192.168.1.238 -P 33009 --protocol=tcp -p  < /home/hackathon/storage/config-files/rct-mysql/init_user.sql
 
 
 - lancement des scripts d'initialisation schema
