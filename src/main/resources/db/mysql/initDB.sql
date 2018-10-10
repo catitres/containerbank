@@ -4,7 +4,6 @@ ALTER DATABASE containerbank
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
-GRANT ALL PRIVILEGES ON containerbank.* TO pc@localhost IDENTIFIED BY 'pc';
 
 USE containerbank;
 

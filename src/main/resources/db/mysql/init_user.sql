@@ -1,0 +1,4 @@
+SELECT User,Host FROM mysql.user;
+DROP USER 'root'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;

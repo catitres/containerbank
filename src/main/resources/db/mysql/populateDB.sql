@@ -5,7 +5,7 @@ INSERT IGNORE INTO advisors VALUES (2, 'Helene', 'Lapic');
 INSERT IGNORE INTO advisors VALUES (3, 'Raphaelle', 'Lefrancois');
 INSERT IGNORE INTO advisors VALUES (4, 'Marie', 'Ortega');
 INSERT IGNORE INTO advisors VALUES (5, 'Juliette', 'Hofleur');
-INSERT IGNORE INTO advisors VALUES (6, 'Pierre', 'Bonvou');
+INSERT IGNORE INTO advisors VALUES (6, 'jean', 'valjean');
 
 INSERT IGNORE INTO specialties VALUES (1, 'saving');
 INSERT IGNORE INTO specialties VALUES (2, 'credits');
