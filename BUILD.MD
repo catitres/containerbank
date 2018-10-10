@@ -9,9 +9,10 @@
 
 - creation arborescence local pour persistance des données mysql
 
-    mkdir -p /home/hackathon/storage/mysql1/mysqlbank1-datadir
 
-    mkdir -p /home/hackathon/storage/config-files/rct-mysql
+    mkdir -p /home/hackathon/storage/mysql1/mysqlbank1-datadir
+         
+         mkdir -p /home/hackathon/storage/config-files/rct-mysql
 
 
 - Copier les scripts d'init BDD vers 
