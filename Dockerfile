@@ -1,8 +1,5 @@
 # Pull base image
-From tomcat:8-jre8
-
-# Maintainer
-MAINTAINER "xxx <xxx@gmail.com">
+From tomcat:8-jre8-alpine
 
 # Copy to images tomcat path
-ADD containerbank.war /usr/local/tomcat/webapps/
+COPY target/containerbank.war /usr/local/tomcat/webapps/
