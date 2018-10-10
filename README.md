@@ -7,5 +7,5 @@
 # Premier objectif
 
 Containerizer l'application:
-Utilisation d'une image tomcat
+Utilisation d'une image tomcat [fichier Dockerfile](Dockerfile)
 
