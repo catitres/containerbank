@@ -290,6 +290,9 @@
             </testResource>
         </testResources>
         <plugins>
+        
+
+        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -433,13 +436,14 @@
     </build>
 
     <profiles>
-        <profile>
+        <!-- <profile>
             <id>HSQLDB</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+           
             <properties>
-                <db.script>hsqldb</db.script>
+                <db.script>hsqldb</db.script> 
                 <jpa.database>HSQL</jpa.database>
                 <jdbc.driverClassName>org.hsqldb.jdbcDriver</jdbc.driverClassName>
                 <jdbc.url>jdbc:hsqldb:mem:containerbank</jdbc.url>
@@ -453,17 +457,27 @@
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
-        </profile>
+        </profile> -->
+        
         <profile>
             <id>MySQL</id>
-            <properties>
+            
+            
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            
+            
+<!--             <properties>
                 <db.script>mysql</db.script>
                 <jpa.database>MYSQL</jpa.database>
                 <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
                 <jdbc.url>jdbc:mysql://localhost:3306/containerbank?serverTimezone=GMT</jdbc.url>
                 <jdbc.username>root</jdbc.username>
-                <jdbc.password>root</jdbc.password>
-            </properties>
+                <jdbc.password>toto</jdbc.password>
+            </properties> 
+-->
+            
             <dependencies>
                 <dependency>
                     <groupId>mysql</groupId>
