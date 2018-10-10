@@ -12,10 +12,9 @@ mkdir -p /home/hackathon/storage/mysql1/mysqlbank1-datadir
 mkdir -p /home/hackathon/storage/config-files/rct-mysql
 
 - Copier les scripts d'init BDD vers 
+
 /home/hackathon/storage/config-files/rct-mysql/init_user.sql
-
 /home/hackathon/storage/config-files/rct-mysql/initDB.sql
-
 /home/hackathon/storage/config-files/rct-mysql/populateDB.sql
 
 - pull de mysql 5.7.23
@@ -25,13 +24,13 @@ sudo docker pull mysql:5.7.23
 sudo docker run -d --name=mysql_bank1 -p 33009:3306 -e MYSQL_ROOT_PASSWORD=mypasswd -v /home/hackathon/storage/mysql1/mysqlbank1-datadir:/var/lib/mysql mysql
 
 - init du user root ( 1 seule fois) 
-/home/hackathon/storage/config-files/rct-mysql/init_user.sql
+sudo mysql -uroot -h 192.168.1.238 -P 33009 --protocol=tcp -p  /home/hackathon/storage/config-files/rct-mysql/init_user.sql
 
 - lancement des scripts d'initialisation schema
 sudo mysql -uroot -h 192.168.1.238 -P 33009 --protocol=tcp -p < /home/hackathon/storage/config-files/rct-mysql/initDB.sql
 
 - lancement insert des données
-sudo mysql -uroot -h 192.168.1.238 -P 33009 -p < /home/hackathon/storage/config-files/rct-mysql/populateDB.sql
+sudo mysql -uroot -h 192.168.1.238 -P 33009 --protocol=tcp -p < /home/hackathon/storage/config-files/rct-mysql/populateDB.sql
 
 ## Run de l'app:
     docker run -d -p 8888:8080 -e jpa.database=MYSQL -e jdbc.driverClassName=com.mysql.jdbc.Driver -e jdbc.url=jdbc:mysql://192.168.1.149:3306/containerbank?serverTimezone=GMT -e jdbc.username=root -e jdbc.password=toto catitres:1.0
