@@ -86,3 +86,26 @@ En parallèle:
 
 ## Architecture
 ![Image of Architecture](Architecture.png)
+
+
+## Reste à faire
+
+### Modifications au niveau de l'application :
+
+Eclater la façade BankService pour faire 4 services :
+- CustomerService
+- AdvisorService
+- CardService
+- PaymentService
+
+Ceci afin de mettre en api rest les services.
+
+Mettre en place un cache distribué type redis
+
+### Supervision/Monitoring :
+Pour les logs, utiliser une solution ELK afin de centraliser les logs pour consultation/recherche.
+
+### Performances :
+
+### Kubernetes :
+Utilier les secrets pour mettre le mot de passe de la BDD au lieu de la variable d'environnement.
