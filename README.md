@@ -8,6 +8,11 @@
 
 Dans le fichier [BUILD.MD](BUILD.MD)
 
+## Notre démarche
+
+Démarche itérative en avançant pas à pas afin d'avoir toujours quelque chose qui marche.
+
+
 ## Nos étapes
 
 ### 1/Mise en place du setup
