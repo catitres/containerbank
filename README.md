@@ -64,3 +64,7 @@ Relance avec l’ip locale du PC
 
 => modif du fichier de conf mysql pour binder sur l’ip du poste
 => OK
+
+### 5/ Mise en place de la base de données
+Utilisation d’une image docker mysql avec volume dédiée pour persister les données entre des arrêt/relance.
+Pas à faire en production mais utile dans notre cas pour externaliser la base de données et ne pas avoir à déployer un mysql en local à la main.
