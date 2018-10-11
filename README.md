@@ -110,6 +110,7 @@ Mettre en place un cache distribué type redis
 Pour les logs, utiliser une solution ELK afin de centraliser les logs pour consultation/recherche.
 
 ### Performances :
+Sur chaque micro service mettre un agent Zipkin pour pousser les infos de performances des requêtes sur un service Zipkin central
 
 ### Kubernetes :
 Utilier les secrets pour mettre le mot de passe de la BDD au lieu de la variable d'environnement.
