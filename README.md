@@ -104,7 +104,11 @@ Eclater la façade BankService pour faire 4 services :
 
 Ceci afin de mettre en api rest les services.
 
-Mettre en place un cache distribué type redis
+Optimiser l'image en utilisant Spring Boot avec un serveur tomcat ou jetty embarqué
+
+Utiliser Google Jib pour optimiser la création de l'image docker (permet de séparer les couches de l'image docker entre les libs en dependcies et le code de l'app : plus rapide pour construire l'image)
+
+### Mettre en place un cache distribué type redis
 
 ### Supervision/Monitoring :
 Pour les logs, utiliser une solution ELK afin de centraliser les logs pour consultation/recherche.
