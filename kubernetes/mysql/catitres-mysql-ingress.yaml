@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: catitres-mysql  
+  namespace: packapp09
+spec:
+  rules:
+  - host: monapp09.hackathon-container.com
+    http:
+      paths:
+      - path: /mysql
+        backend:
+          serviceName: catitres-mysql-svc
+          servicePort: 8999
+  tls:
+  - hosts:
+    - monapp09.hackathon-container.com

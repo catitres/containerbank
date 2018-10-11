@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catitres-mysql
+  namespace: packapp09
+spec:
+  selector:
+    matchLabels:
+      app: catitres-mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: catitres-mysql
+    spec:
+      containers:
+      - name: catitres-mysql
+        image: registry.hackathon-container.com/packapp09/catitres:1.0
+        env:
+            - name: jpa.database
+              value: "MYSQL"
+            - name: jdbc.driverClassName
+              value: "com.mysql.jdbc.Driver"
+            - name: jdbc.url
+              value: "jdbc:mysql://mysql09.packapp09:3306/containerbank?serverTimezone=GMT"
+            - name: jdbc.username
+              value: "root"
+            - name: jdbc.password
+              value: "mypasswd"
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: registry
+
