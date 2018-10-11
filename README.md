@@ -82,3 +82,7 @@ En parallèle:
 - Utilisation de notre image de l’app avec H2 pour s’abstraire de la partie persistance de données dans un premier temps.
    => OK
 - Etude des Persistent Volume Clain de Kubernetes pour la base de données mysql : le but étant de la passer en paramètre du service de l'app
+
+
+## Architecture
+![Image of Architecture](Architecture.png)
