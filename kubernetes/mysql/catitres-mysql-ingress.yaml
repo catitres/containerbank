@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: catitres-mysql  
   namespace: packapp09
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: monapp09.hackathon-container.com
