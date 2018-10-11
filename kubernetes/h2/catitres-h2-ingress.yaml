@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: catitres-h2
+  namespace: packapp09
+spec:
+  rules:
+  - host: monapp09.hackathon-container.com
+    http:
+      paths:
+      - backend:
+          serviceName: catitres-h2-svc
+          servicePort: 8989
+  tls:
+  - hosts:
+    - monapp09.hackathon-container.com

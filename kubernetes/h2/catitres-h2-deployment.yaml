@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catitres-h2
+  namespace: packapp09
+spec:
+  selector:
+    matchLabels:
+      app: catitres-h2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: catitres-h2
+    spec:
+      containers:
+      - name: catitres-h2
+        image: registry.hackathon-container.com/packapp09/catitres-h2:1.0
+        env:
+            - name: jpa.database
+              value: "HSQL"
+            - name: jdbc.driverClassName
+              value: "org.hsqldb.jdbcDriver"
+            - name: jdbc.url
+              value: "jdbc:hsqldb:mem:containerbank"
+            - name: jdbc.username
+              value: "sa"
+            - name: jdbc.password
+              value: ""
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: registry
