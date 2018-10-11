@@ -1,9 +1,16 @@
 
 # Instructions pour builder / run l'app
 
-## Build de l'app
+## Build de l'app et de l'image docker
     mvn clean package
-    
+    docker build . --tag catitres:1.0
+
+## Run de l'app:
+    docker run -d -p 8888:8080 -e jpa.database=MYSQL -e jdbc.driverClassName=com.mysql.jdbc.Driver -e jdbc.url=jdbc:mysql://192.168.1.149:3306/containerbank?serverTimezone=GMT -e jdbc.username=root -e jdbc.password=toto catitres:1.0
+
+192.168.1.149:3306 : ip:port de votre base de données mysql
+containerbank : nom de la base mysql
+Si vous n'avez pas de base mysql voir ci-dessous pour en créer une via docker.
 
 ## Base de données
 
@@ -17,11 +24,11 @@
          mkdir -p /home/hackathon/storage/config-files/rct-mysql
 
 
-- Copier les scripts d'init BDD vers 
+- Copier les scripts d'init BDD vers
 
-/home/hackathon/storage/config-files/rct-mysql/init_user.sql
+    /home/hackathon/storage/config-files/rct-mysql/init_user.sql
 
-/home/hackathon/storage/config-files/rct-mysql/initDB.sql
+    /home/hackathon/storage/config-files/rct-mysql/initDB.sql
 
 /home/hackathon/storage/config-files/rct-mysql/populateDB.sql
 
@@ -51,5 +58,3 @@
       sudo mysql -uroot -h 192.168.1.238 -P 33009 --protocol=tcp -p < /home/hackathon/storage/config-files/rct-mysql/populateDB.sql
 
 
-## Run de l'app:
-    docker run -d -p 8888:8080 -e jpa.database=MYSQL -e jdbc.driverClassName=com.mysql.jdbc.Driver -e jdbc.url=jdbc:mysql://192.168.1.149:3306/containerbank?serverTimezone=GMT -e jdbc.username=root -e jdbc.password=toto catitres:1.0
