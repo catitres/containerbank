@@ -4,6 +4,9 @@
 
 [![Build Status](https://travis-ci.org/catitres/containerbank.svg?branch=master)](https://travis-ci.org/catitres/containerbank)
 
+## Les instructions de build
+
+Dans le fichier [BUILD.MD](BUILD.MD)
 
 ## Nos étapes
 
