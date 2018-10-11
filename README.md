@@ -76,3 +76,8 @@ Relance avec l’ip locale du PC
 ### 5/ Mise en place de la base de données
 Utilisation d’une image docker mysql avec volume dédiée pour persister les données entre des arrêt/relance.
 Pas à faire en production mais utile dans notre cas pour externaliser la base de données et ne pas avoir à déployer un mysql en local à la main.
+
+### 6/ Passage en déploiement kubernetes
+En parallèle:
+- Utilisation de notre image de l’app avec H2 pour s’abstraire de la partie persistance de données dans un premier temps.
+- Etude des Persistent Volume Clain de Kubernetes pour la base de données mysql : le but étant de la passer en paramètre du service de l'app
