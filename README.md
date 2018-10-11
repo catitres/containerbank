@@ -27,6 +27,10 @@ https://github.com/catitres/containerbank
 Ajout intégration continue avec Travis ci:
 https://travis-ci.org/catitres/containerbank
 
+Utilisation de Slack pour échanger au sein de l'équipe
+
+Utilisation de draw.io pour les diagrammes avec connexion sur le repo github pour le stockage
+
 ### 2/ Passage en docker de l’application d’origine
 Essai de passer en docker avec le minimum d’impact au niveau du code de l’application.
 Utilisation d’une image docker tomcat:8-jre8 qui permet de builder une image avec un tomcat et un war obtenue après compilation.
